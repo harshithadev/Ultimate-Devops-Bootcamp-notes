@@ -1,0 +1,48 @@
+## linux topics
+
+Types of shells :
+
+- Bourne Shell (Sh shell) <first>
+- C Shell (csh or tcsh)
+- Z Shell (zsh)
+- Bourne again shell (bash) <most recent>
+
+## Basic commands
+
+- echo :
+  used to print on screen
+
+- ls :
+  list files and folders
+
+- cd :
+  change directory
+
+- pwd :
+  present working directory
+
+- mkdir :
+  make directory
+
+- rm -r /path/to/file/or/folder
+  removes the file or folder
+  can use -rf to recursively and force delete.
+
+- cp -rf /source/path to/destination/path
+  copies folders or files
+
+- mv /source/path destination/path/
+  moves them, can be used to rename as well
+
+- touch filename
+  creates a file with the given filename
+
+- cat > filename
+  adds text to the file, the text is input after this line, and CTLR + D, to save
+
+- cat filename
+  to view the contents of the file
+
+---
+
+\\\\ multiple commands can be typed in one line by seperating them with ;
