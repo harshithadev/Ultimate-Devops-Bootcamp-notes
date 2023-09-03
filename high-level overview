@@ -1,0 +1,97 @@
+## High level overview :
+
+Step 1 : Code
+Use any of your favourite programming languages or an efficient programming language and get coding. Let's say you make a website.
+You are likey to do this on your laptop, which will then be called as you developement setup.
+
+Step 1.5 : Build
+So a code cannot be executed as such, it has to be in an executable format. So converting a code into an executable format is called
+Building. This can be done with tools such as gradle, Mavan ect. A build script is used by these tools to the build the final executable.
+
+Step 2 : Host
+When you want a lot of users to access it, and the website must be up all the time, hosting it from your devolopment system might not
+be the most efficient choice. So you would likely need a server (phyisical, VM server or cloud server) to host your website in.
+Now just copying your code onto this server wont do. You'll have to configure it to match your development setup. Includes runtimes, packages
+etc. This is would be your deployment/ production setup.
+The executable produced in the build stage, is run in this stage. Also called as 'deployed'.
+
+---
+
+## This is the basic setup. Now you can make it work with this, but there come in additional factors like collaboration work, up scaling, testing. For these we have additional tools to aid us.
+
+---
+
+Step 1.2 : Collaborate
+When multiple users come together to make a piece of code, they work with the same code base. Might lead to conflicts. Hence a tool that helps
+resolve these is - GIT. Git is the underlying tool. And the central code base is saved in a cloud based repository called GITHUB. - verisoning of code - collaboration
+
+Step 1.6
+Individually when you code, the code is in one single system and you can build it on the system itself. Now with multiple people collaborating, you
+need to build with everyone's changes, so now we move the build operation to a dedicated server, let's call it the build server.
+
+Step 1.7
+So all changes might not be compatible with each other. And we cannot deploy a faulty application. Therefore, each build is then futhur sent to the TESTING server.
+Here the builds are tested. If it matches with the expectations they are then pushed onto for deployment, else pushed back for furthur developement.
+
+---
+
+## Now all of the above mentioned are done manually, and they are very time consuming. Hence came into existance CI/CD tools. Continuous Integration and Continuous Deplyment Pipeline.
+
+Step 0 (all along the way) : CI/CD pipeline
+These various stages are automatically put into place with the help of CI CD pipeline automation tools like JENKINS, GITHUB ACTIONS and GITLAB CI/CD.
+Here, the code from various users pushed to the central repository is automatically pushed to the build server, built, pushed to the teseting server, tested and then
+pushed to the production, when it is production ready!
+
+- faster
+- less manual, more automatic
+
+---
+
+## Now imagine you are coming up with a change in the code that requires a change in the required dependencies. Now one has to manually install this in the developement server, build server, test server and the deployment server. This is again tedious.
+
+Step 1.4 : Containerize
+Containerization refers to a addding a psudo layer onto the application and package it with its required environment, dependencies and others configurations necessary. This can be directly deployed onto any server without a worry of configuration errors.
+So now is STEP 1.5 when we build, we build an image with the application and its respective dependencies.
+The tool that lets us create images of applications is DOCKER. We create a dockerfile (similar to build file whcich is used to build) which is used to build the image, which then could be easily run on any server/environment using a simple docker run command.
+
+- container is pro isolation. Hence we can have multiple instances of containers running simultaneously. Each of these processes does not interfere with another.
+
+---
+
+## Moving on to the production side.
+
+Step 3 : Scale Up/ down (container orchestration)
+When users increase, in order to take the incoming traffic, we need to increase the number of container instances. And when there is less traffic we need to shut a few off to be efficient. These can be on different servers or same server. We need a container orchestration for this. KUBERNETES
+
+- mention how to deploy the containers
+- auto scale up and scale down of containers
+- makes sure that the requires number of containers are always up (that is if some container fails, automatically turns it back up)
+- manage the resources (the underlying servers effectively)
+
+---
+
+Step 4 : Provisioning of servers
+Imagine you bring in a new server or you want to repurpose an old server. The applcation deployment would not need to configure the server since it comes packaged as a container. But the server needs to have some configurations done pre. Like installing container run time, kubernetes packages ect.
+This can be done by using a automation tool like TERRAFORM. The required state is mentioned in a terraform manifest file and the infrastructures are always present in this required state. It has the details of all servers and their required state.
+
+- automates provisioning and configuration of infrastructure.
+- ensures they stay in the same state.
+- Iac : Infrastructure as Code.
+
+Step 4.5 : Automation of configuration on infrastruction
+After provisioning is done, the automation of configuration is done by tools like ANSIBLE. After tools like TERRAFORM provision the infrastructure, tools like ANSIBLE automate the configuration task. Ansible cookbooks are used to make this happen.
+
+- post configuration automation
+
+Step 5 : Monitorning and Maintainence
+PROMETHEOUS collects all necessary info like CPU consumption ect. And tools like GRAPHANA view this data graphically as charts and graphs for the ease of understanding.
+
+---
+
+---
+
+---
+
+## DEVOPS INFINITY
+
+Code - build - test - release - deploy - operate - Monitor - feedback and loop!
