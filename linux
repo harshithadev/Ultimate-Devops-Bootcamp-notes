@@ -1,3 +1,11 @@
+## C5XRYUDMYDVOPBTCMP
+
+## linux lab code.
+
+---
+
+---
+
 ## linux topics
 
 Types of shells :
@@ -46,3 +54,55 @@ Types of shells :
 ---
 
 \\\\ multiple commands can be typed in one line by seperating them with ;
+
+## more commands
+
+- whoami
+  gives out the username
+
+- id
+  gives the user id
+
+- su username
+  switches user to specified username
+
+- ssh username@hostname
+  lets you connect to that user's shell
+
+## advanced commands
+
+- service httpd start
+  start httpd service, which stands for apache web server
+
+or
+
+- systemctl start httpd
+
+-systemctl stop servicename
+
+- systectl status servicename
+
+- systemctl enable servicename
+  will make the service load as soon as bootup
+- systemctl disable servicename
+
+---
+
+- we can have any application as a service.
+- all we need to do is, go to etc/systemd/system
+- create a file with the name servicename.service
+- and then insdie the file type :
+  [Service]
+  ExecStart=/usr/bin/python3 /opt/code/my_app.py
+
+- for it to automatically restart everytime it stops, add this
+  [Install]
+  WantedBy=multiuser.target
+
+  and add
+  [Service]
+  Restart=always
+
+- this automaticaly restarts the service even if it
+
+---

@@ -1,0 +1,53 @@
+Switch connects devices within the same network
+
+Router connects various networks togther
+
+Gateway : connects routers. There is aways a default gateway from each network (router)
+
+- ip link :
+- ip addr :
+- ip addr add :
+- ip route
+- ip route add ... via ...
+- cat /proc/sys/net/ipv4/ip_forward/
+
+See what each one of these does.
+
+more : ( on DNS )
+
+- give alias to a IP
+  echo 192.169.1.11 db >> /etc/hosts
+
+this process is called name resolutuin.
+
+---
+
+DNS : domain name server
+basically has like a mapping table. It maps name to its respective IP
+
+There are various records mentioned in DNS : A, AAAA, and CNAME
+
+A: this maps name to IP
+AAAA : name to ipv6
+CNAME : name to other names (alias)
+
+---
+
+then disecting a url :
+subdomain.domain.top-level domain
+
+example :
+.com, .edu, .net all of these are top level domains.
+
+google, facebook, would be domain names
+
+drive.google, web.facebook here, drive and web are sub domains
+
+--
+
+Every system has a local name server, and in case there it does not find a hit, it is routed to another common nameserver (also mentioned in the local name server)
+
+multiple name servers can be mentioned as well.
+Public name servers also exsist for this purpose.
+
+The purpose is called as address resolution !
