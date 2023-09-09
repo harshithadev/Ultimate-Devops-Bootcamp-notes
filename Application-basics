@@ -1,0 +1,24 @@
+# compiled languages vs interpretted languages
+
+- line by line compilation is called as interpretted.
+- examples include : Python, Ruby, NodeJS
+
+- when a whole code is compiled altogehter
+- examples include java, c++
+
+# packages, modules, libraries
+
+# java programming language.
+
+- widely used for desktop, mobile and web applications
+- JDK : Java Devoper Kit
+- Has develop(jdb, javadoc), build(javac. jar) and run(jre, java) tools.
+- config files, MAVAN, GRADLE
+
+# NodeJS
+
+- NPM is the package manager
+
+# Python
+
+- pip is a package manager
